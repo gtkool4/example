@@ -10,14 +10,14 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
-const appID = "com.github.diamondburned.gotk4-examples.gtk4.mouse"
+const appID = "com.github.gtkool4.example.mouse"
 
 func main() {
 	app := gtk.NewApplication(appID, 0)
 	app.Connect("activate", activate)
 
 	if code := app.Run(os.Args); code > 0 {
-		os.Exit(code)
+		os.Exit(int(code))
 	}
 }
 
@@ -44,7 +44,7 @@ func activate(app *gtk.Application) {
 	}
 
 	draw := gtk.NewDrawingArea()
-	draw.SetDrawFunc(func(draw *gtk.DrawingArea, cr *cairo.Context, w, h int) {
+	draw.SetDrawFunc(func(draw *gtk.DrawingArea, cr *cairo.Context, w, h int32) {
 		// Draw a red rectagle at the X and Y location.
 		cr.SetSourceRGB(255, 0, 0)
 		cr.Rectangle(click.X, click.Y, 10, 10)

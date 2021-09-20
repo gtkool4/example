@@ -7,11 +7,11 @@ import (
 )
 
 func main() {
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.simple", 0)
+	app := gtk.NewApplication("com.github.gtkool4.example.simple", 0)
 	app.Connect("activate", activate)
 
 	if code := app.Run(os.Args); code > 0 {
-		os.Exit(code)
+		os.Exit(int(code))
 	}
 }
 

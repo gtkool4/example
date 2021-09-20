@@ -13,7 +13,7 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
-const appID = "com.github.diamondburned.gotk4-examples.gtk4.drawingarea"
+const appID = "com.github.gtkool4.example.drawingarea"
 
 //go:embed trollface.png
 var trollfacePNG []byte
@@ -23,7 +23,7 @@ func main() {
 	app.Connect("activate", activate)
 
 	if code := app.Run(os.Args); code > 0 {
-		os.Exit(code)
+		os.Exit(int(code))
 	}
 }
 
@@ -44,7 +44,7 @@ func activate(app *gtk.Application) {
 
 	drawArea := gtk.NewDrawingArea()
 	drawArea.SetVExpand(true)
-	drawArea.SetDrawFunc(func(area *gtk.DrawingArea, cr *cairo.Context, w, h int) {
+	drawArea.SetDrawFunc(func(area *gtk.DrawingArea, cr *cairo.Context, w, h int32) {
 		gdk.CairoSetSourcePixbuf(cr, trollface, state.X, state.Y)
 		cr.Paint()
 	})

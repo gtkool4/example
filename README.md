@@ -7,5 +7,4 @@ This repository provides examples on using GTK4 and GTK3 using the
 
 ## Examples
 
-GTK4 examples are in [./gtk4](./gtk4). A simple Hello World example is in
-[./gtk4/simple](./gtk4/simple).
+A simple Hello World example is in [./simple.go](./simple.go).

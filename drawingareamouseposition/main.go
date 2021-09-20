@@ -7,14 +7,14 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
-const appID = "com.github.diamondburned.gotk4-examples.gtk4.drawingareamouseposition"
+const appID = "com.github.gtkool4.example.drawingareamouseposition"
 
 func main() {
 	app := gtk.NewApplication(appID, 0)
 	app.Connect("activate", activate)
 
 	if code := app.Run(os.Args); code > 0 {
-		os.Exit(code)
+		os.Exit(int(code))
 	}
 }
 
